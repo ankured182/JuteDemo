@@ -4,26 +4,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jute Impex | Sustainable Luxury</title>
-    <style>
-        body { 
-            background-color: #000; 
-            color: #fff; 
-            font-family: 'Inter', sans-serif; 
-            display: flex; 
-            flex-direction: column;
-            align-items: center; 
-            justify-content: center; 
-            height: 100vh; 
-            margin: 0; 
-            text-transform: uppercase; 
-            letter-spacing: -0.04em;
-        }
-        h1 { font-size: clamp(2rem, 8vw, 4rem); font-weight: 900; margin: 0; }
-        p { font-size: 0.8rem; letter-spacing: 0.2em; opacity: 0.6; margin-top: 10px; }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <h1>Coming Soon</h1>
-    <p>Jute Impex Ltd.</p>
+<body class="dark-mode">
+    <div id="preloader"></div>
+    <header>
+        <nav id="main-nav">
+            <a href="#" class="logo">Jute Impex</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-links">
+                <li><a href="#hero">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#materials">Materials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <video autoplay muted loop playsinline id="hero-video" poster="assets/ui/hero-poster.jpg">
+                <source src="assets/video/jute-production.mp4" type="video/mp4">
+            </video>
+            <div class="hero-image-overlay"></div>
+            <div class="hero-overlay">
+                <span class="eyebrow">Premium Handcrafted Manufacturing</span>
+                <h1>Crafting Excellence for Global Brands.</h1>
+                <p class="hero-description">
+                    Jute Impex crafts and constructs premium jute bags designed for the world’s most successful digital storefronts. From the heart of Bangladesh, we provide international buyers with high-end, ethically made handicrafts ready for leading e-commerce platforms and boutique global marketplaces.
+                </p>
+            </div>
+        </section>
+
+        <!-- Slot 2: Products (formerly Showroom) -->
+        <section id="products">
+           <div class="section-header centered">
+                <span class="eyebrow">The Collection</span>
+                <h2>Premium Products</h2>
+            </div>
+            <div class="product-container" id="jutebag2-container">
+                <img src="assets/products/JuteBag2_web.webp" alt="Jute Bag 2" class="product-base layer">
+                <div class="exploded-layers">
+                    <img src="assets/products/JuteBag2Decon_web.webp" alt="Body" class="part-body layer">
+                    <img src="assets/products/JuteBag2Decon_web.webp" alt="Flap" class="part-flap layer">
+                    <img src="assets/products/JuteBag2Decon_web.webp" alt="Strap" class="part-strap layer">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slot 3: Materials (moved into Sourcing position) -->
+        <section id="materials" class="content-section">
+            <div class="container">
+                <div class="split-view">
+                    <div class="text-side">
+                        <span class="eyebrow">The Engineering</span>
+                        <h2>High-Performance Materials</h2>
+                        <p>We utilizing the highest grade of Corchorus capsularis to achieve unmatched tensile strength and technical precision.</p>
+                        <ul class="feature-list">
+                            <li><strong>Jute Yarn:</strong> CRM and CB grades for precision weaving.</li>
+                            <li><strong>Hessian Cloth:</strong> Natural, bleached, or dyed finishes.</li>
+                            <li><strong>JUCO Blend:</strong> A sophisticated technical mix of jute and cotton.</li>
+                        </ul>
+                    </div>
+                    <div class="image-side">
+                        <img src="NewImages/Ind2.jpg" alt="Jute Material Close-up" class="material-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slot 4: Contact -->
+        <section id="contact" class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="eyebrow">Global Reach</span>
+                    <h2>Let's build something sustainable.</h2>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <span class="contact-label">Headquarters</span>
+                        <h3 class="contact-value">Dhaka, Bangladesh</h3>
+                        <p class="contact-desc">Strategic sourcing from the heart of the Golden Fiber delta.</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-label">Direct Inquiry</span>
+                        <a href="mailto:info@juteimpex.com" class="contact-value link">info@juteimpex.com</a>
+                        <a href="tel:+8801706978840" class="contact-value link" style="font-size: 1.25rem; margin-top: 0.5rem; display: block;">+880 1706-978840</a>
+                        <p class="contact-desc">Executive B2B support within 12 business hours.</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-label">Logistics Hubs</span>
+                        <h3 class="contact-value">London &bull; NY &bull; Tokyo</h3>
+                        <p class="contact-desc">Seamless multi-channel distribution for global brands.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section catalogue-section">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="eyebrow">Digital Showcase</span>
+                    <h2>Product Catalogue</h2>
+                </div>
+                <div class="catalogue-display">
+                    <img src="NewImages/Ind3.jpg" alt="Product Catalogue" class="catalogue-img">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">Jute Impex</a>
+                <p>Global B2B Sourcing for Sustainable Luxury.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Products</h4>
+                    <a href="#">Fashion Totes</a>
+                    <a href="#">Industrial Sacking</a>
+                    <a href="#">Yarn & Fabric</a>
+                </div>
+                <div class="link-group">
+                    <h4>Company</h4>
+                    <a href="#">Manufacturing</a>
+                    <a href="#">Sustainability</a>
+                    <a href="#">Global Logistics</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Jute Impex. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
