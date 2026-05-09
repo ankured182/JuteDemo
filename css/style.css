@@ -23,6 +23,11 @@
     padding: 0;
 }
 
+html {
+    height: auto;
+    scroll-behavior: auto; /* Required for Lenis */
+}
+
 body.dark-mode {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -44,9 +49,17 @@ header {
     width: 100%;
     z-index: 100;
     background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border-bottom: none;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    transition: background 0.5s ease, backdrop-filter 0.5s ease;
+    border-bottom: 1px solid transparent;
+}
+
+header.scrolled {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 #main-nav {
@@ -58,14 +71,69 @@ header {
     padding: 1rem 2rem;
 }
 
-#main-nav .logo {
-    font-weight: 700;
-    font-size: 1.5rem;
-    letter-spacing: -0.03em;
-    color: var(--accent-color);
+.logo {
+    display: flex;
+    flex-direction: row !important; /* Force horizontal alignment */
+    align-items: center;
     text-decoration: none;
     flex-shrink: 0;
     z-index: 110;
+    gap: 0.75rem;
+    white-space: nowrap; /* Prevent text wrapping within the logo */
+}
+
+.logo-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* Footer Specific */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.footer-brand-top {
+    display: flex;
+    flex-direction: row; /* Force horizontal alignment */
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: nowrap; /* Prevent wrapping on desktop */
+}
+
+.footer-brand p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.95rem;
+    margin: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 1.5rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .footer-brand-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .footer-brand p {
+        border-left: none;
+        padding-left: 0;
+    }
 }
 
 /* Hamburger Icon Styling */
@@ -139,12 +207,13 @@ header {
 }
 
 #hero h1 {
-    font-size: clamp(2.5rem, 8vw, 6rem); /* Refined clamp for better mobile fit */
+    font-size: clamp(2.5rem, 8vw, 6rem);
     font-weight: 700;
     letter-spacing: -0.04em;
     margin: 1.5rem 0;
     color: #ffffff;
-    line-height: 1.1; /* Improved line-height for readability */
+    line-height: 1.1;
+    min-height: 1.2em; /* Prevents layout jumping during animation out */
 }
 
 .hero-overlay .eyebrow {
@@ -192,7 +261,7 @@ header {
 }
 
 .content-section {
-    padding: 160px 5vw;
+    padding: 100px 5vw;
     background: transparent;
     color: #fff;
     width: 100%;
@@ -384,6 +453,25 @@ header {
     text-decoration: none;
 }
 
+.contact-phone {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.whatsapp-link {
+    color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.whatsapp-link:hover {
+    color: #25D366; /* WhatsApp Brand Green */
+    transform: scale(1.1);
+}
+
 .contact-value.link {
     position: relative;
     width: fit-content;
@@ -564,6 +652,48 @@ header {
     }
 }
 
+#materials, #contact {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5vw;
+}
+
+@media (max-width: 768px) {
+    #materials, #contact {
+        height: auto;
+        padding: 80px 1.5rem;
+    }
+}
+
+/* Catalogue Section Desktop Styles */
+.catalogue-section {
+    padding: 120px 5vw;
+    background: #000;
+}
+
+.catalogue-display {
+    width: 100%;
+    max-width: 1200px;
+    margin: 4rem auto 0;
+    aspect-ratio: 16/9;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.catalogue-img {
+    width: 100%;
+    height: 120%; /* Extra height for parallax */
+    object-fit: cover;
+    will-change: transform;
+}
+
 footer {
     padding: 120px 5vw 60px;
     background: #000;
@@ -579,13 +709,7 @@ footer {
 }
 
 .footer-brand .logo {
-    display: block;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-    letter-spacing: -0.03em;
+    margin-bottom: 0; /* Removed display: block and other overrides */
 }
 
 .footer-brand p {

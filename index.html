@@ -10,7 +10,10 @@
     <div id="preloader"></div>
     <header>
         <nav id="main-nav">
-            <a href="#" class="logo">Jute Impex</a>
+            <a href="#" class="logo">
+                <img src="assets/logos/logo.webp" alt="Jute Impex" class="logo-img">
+                <h1 class="logo-text">JUTE IMPEX</h1>
+            </a>
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -32,14 +35,15 @@
             </video>
             <div class="hero-image-overlay"></div>
             <div class="hero-overlay">
-                <span class="eyebrow">Premium Handcrafted Manufacturing</span>
+                <span class="eyebrow">Premium Handcrafted B2B Manufacturing</span>
                 <h1>Crafting Excellence for Global Brands.</h1>
                 <p class="hero-description">
-                    From the heart of Bangladesh, we provide international buyers with high-end, ethically made handicrafts ready for leading e-commerce platforms and boutique global marketplaces.
+                    Jute Impex Bangladesh provides international buyers with high-end, ethically made handicrafts ready for leading e-commerce platforms and boutique global marketplaces.
                 </p>
             </div>
         </section>
 
+        <!-- Slot 2: Products (formerly Showroom) -->
         <section id="products">
            <div class="section-header centered">
                 <span class="eyebrow">The Collection</span>
@@ -55,6 +59,7 @@
             </div>
         </section>
 
+        <!-- Slot 3: Materials (moved into Sourcing position) -->
         <section id="materials" class="content-section">
             <div class="container">
                 <div class="split-view">
@@ -75,11 +80,12 @@
             </div>
         </section>
 
+        <!-- Slot 4: Contact -->
         <section id="contact" class="content-section">
             <div class="container">
                 <div class="section-header">
                     <span class="eyebrow">Global Reach</span>
-                    <h2>Let's build something sustainable.</h2>
+                    <h2>Contact Us</h2>
                 </div>
                 
                 <div class="contact-grid">
@@ -92,7 +98,12 @@
                     <div class="contact-item">
                         <span class="contact-label">Direct Inquiry</span>
                         <a href="mailto:info@juteimpex.com" class="contact-value link">info@juteimpex.com</a>
-                        <a href="tel:+8801706978840" class="contact-value link" style="font-size: 1.25rem; margin-top: 0.5rem; display: block;">+880 1706-978840</a>
+                        <div class="contact-phone">
+                            <a href="tel:+8801706978840" class="contact-value link">+880 1706-978840</a>
+                            <a href="https://wa.me/8801706978840" target="_blank" class="whatsapp-link" aria-label="Chat on WhatsApp">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.305 1.652zm6.599-3.835c1.516.903 3.135 1.38 4.793 1.381 5.233 0 9.491-4.258 9.493-9.491 0-2.535-1.002-4.931-2.822-6.753-1.82-1.821-4.214-2.819-6.756-2.82-5.233 0-9.491 4.258-9.493 9.491-.002 1.621.411 3.213 1.196 4.615l-.998 3.645 3.731-.978zm11.567-7147c.165-.083.972-.479 1.123-.533.151-.054.26-.083.371.083.111.165.43.533.527.641.096.108.191.12.356.037.165-.083.696-.256 1.326-.818.49-.435.82-.972.916-1.137.096-.165.01-.254-.073-.336-.075-.073-.165-.191-.247-.288-.083-.096-.111-.165-.165-.275-.054-.11-.027-.206.014-.288.041-.083.371-.895.507-1.222.133-.317.266-.274.371-.274.104-.001.222-.001.339-.001.117 0 .307.044.468.22.161.176.616.601.616 1.466 0 .865-.631 1.701-.72 1.82-.089.119-1.242 1.896-3.01 2.659-.42.181-.747.29-.997.371-.416.133-.794.114-1.093.07-.333-.049-1.023-.418-1.166-.821-.143-.403-.143-.748-.1-.821.043-.073.158-.117.323-.2z"/></svg>
+                            </a>
+                        </div>
                         <p class="contact-desc">Executive B2B support within 12 business hours.</p>
                     </div>
 
@@ -121,10 +132,21 @@
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <a href="#" class="logo">Jute Impex</a>
-                <p>Global B2B Sourcing for Sustainable Luxury.</p>
+                <div class="footer-brand-top">
+                    <a href="#" class="logo">
+                        <img src="assets/logos/logo.webp" alt="Jute Impex" class="logo-img">
+                        <h1 class="logo-text">JUTE IMPEX</h1>
+                    </a>
+                    <p>Global B2B Sourcing for Sustainable Luxury.</p>
+                </div>
             </div>
             <div class="footer-links">
+                <div class="link-group">
+                    <h4>Direct Contact</h4>
+                    <a href="mailto:info@juteimpex.com">info@juteimpex.com</a>
+                    <a href="tel:+8801706978840">+880 1706-978840</a>
+                    <a href="https://wa.me/8801706978840" target="_blank">WhatsApp Support</a>
+                </div>
                 <div class="link-group">
                     <h4>Products</h4>
                     <a href="#">Fashion Totes</a>
@@ -144,6 +166,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/script.js"></script>
